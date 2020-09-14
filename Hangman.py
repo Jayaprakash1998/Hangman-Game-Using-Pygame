@@ -6,7 +6,7 @@ import random
 pygame.init()
 WIDTH, HEIGHT = 800, 500
 win = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Hangman Game!")
+pygame.display.set_caption("*** Hangman Game ***")
 
 # button variables
 RADIUS = 20
@@ -33,7 +33,7 @@ for i in range(7):
 
 # game variables
 hangman_status = 0
-words = ["IDE", "REPLIT", "PYTHON", "PYGAME"]
+words = ["JAVA", "DATASTRUCTURE", "PYTHON", "HTML", "CSS", "JAVASCRIPT", "DATABASE","C"]
 word = random.choice(words)
 guessed = []
 
@@ -46,7 +46,7 @@ def draw():
     win.fill(WHITE)
 
     # draw title
-    text = TITLE_FONT.render("DEVELOPER HANGMAN", 1, BLACK)
+    text = TITLE_FONT.render("COMPUTER SCIENCE", 1, BLACK)
     win.blit(text, (WIDTH/2 - text.get_width()/2, 20))
 
     # draw word
@@ -113,14 +113,15 @@ def main():
                 break
         
         if won:
-            display_message("You WON!")
+            display_message("You Saved Me!")
             break
 
         if hangman_status == 6:
-            display_message("You LOST!")
+            display_message("Iam Hanging")
             break
-    
+
 while True:
-    
-    main()
+  main()
+
+
 pygame.quit()
